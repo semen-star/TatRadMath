@@ -4,182 +4,427 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Татьяна Радиковна — репетитор по математике</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Floating action button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="#contact-form" class="bg-red-700 hover:bg-red-800 text-white rounded-full p-4 shadow-lg flex items-center justify-center w-16 h-16 transition-all duration-300">
+            <i class="fas fa-edit text-xl"></i>
+        </a>
+    </div>
+
     <!-- Header -->
-    <header class="bg-indigo-800 text-white shadow-lg">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
             <div class="flex items-center">
-                <div class="bg-white text-indigo-800 font-bold rounded-full w-10 h-10 flex items-center justify-center mr-3">
-                    TR
+                <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                    <i class="fas fa-square-root-alt text-xl"></i>
                 </div>
-                <h1 class="text-xl font-bold">Татьяна Радиковна — репетитор по математике</h1>
+                <h1 class="text-xl font-bold">Татьяна Радиковна</h1>
             </div>
             <div class="hidden md:flex space-x-4">
-                <a href="https://vk.com/tatradmatem" target="_blank" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg flex items-center transition">
-                    <i class="fab fa-vk mr-2"></i> ВКонтакте
+                <a href="#programs" class="hover:text-blue-600 transition">Программы</a>
+                <a href="#about" class="hover:text-blue-600 transition">Обо мне</a>
+                <a href="#reviews" class="hover:text-blue-600 transition">Отзывы</a>
+                <a href="#materials" class="hover:text-blue-600 transition">Материалы</a>
+                <a href="#contacts" class="hover:text-blue-600 transition">Контакты</a>
+            </div>
+            <div class="flex items-center space-x-2">
+                <a href="https://vk.com" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                    <i class="fab fa-vk mr-1"></i> ВКонтакте
                 </a>
-                <a href="tel:+79090954883" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg flex items-center transition">
-                    <i class="fas fa-phone mr-2"></i> Позвонить
+                <a href="tel:+79123456789" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                    <i class="fas fa-phone mr-1"></i> Позвонить
                 </a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-white">
+            <button class="md:hidden text-gray-700" id="mobile-menu-button">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
+        
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-indigo-700 px-4 py-2">
-            <div class="flex flex-col space-y-2">
-                <a href="https://vk.com/tatradmatem" target="_blank" class="bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-lg flex items-center transition">
-                    <i class="fab fa-vk mr-2"></i> ВКонтакте
-                </a>
-                <a href="tel:+79090954883" class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg flex items-center transition">
-                    <i class="fas fa-phone mr-2"></i> Позвонить
-                </a>
+        <div class="hidden md:hidden bg-white border-t" id="mobile-menu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
+                <a href="#programs" class="py-2 hover:text-blue-600 transition">Программы</a>
+                <a href="#about" class="py-2 hover:text-blue-600 transition">Обо мне</a>
+                <a href="#reviews" class="py-2 hover:text-blue-600 transition">Отзывы</a>
+                <a href="#materials" class="py-2 hover:text-blue-600 transition">Материалы</a>
+                <a href="#contacts" class="py-2 hover:text-blue-600 transition">Контакты</a>
+                <div class="pt-2 border-t flex justify-between">
+                    <a href="https://vk.com" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                        <i class="fab fa-vk mr-1"></i> ВКонтакте
+                    </a>
+                    <a href="tel:+79123456789" class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-full text-sm flex items-center">
+                        <i class="fas fa-phone mr-1"></i> Позвонить
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-indigo-50 to-blue-50 py-12 md:py-20">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Частные занятия по математике</h2>
-                <p class="text-lg text-gray-600 mb-6">Индивидуальные уроки для школьников и абитуриентов. Подготовка к ОГЭ и ЕГЭ. Повышение успеваемости и устранение пробелов в знаниях.</p>
+    <section class="hero-image text-white">
+        <div class="container mx-auto px-4 py-20 md:py-32">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Готовлю к экзаменам по математике</h1>
+                <p class="text-xl md:text-2xl mb-8">Понятно, спокойно, с результатом.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact-form" class="bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-full font-medium transition">Записаться</a>
+                    <a href="#materials" class="bg-white hover:bg-gray-100 text-gray-800 px-6 py-3 rounded-full font-medium transition">Бесплатная диагностика</a>
+                    <a href="#reviews" class="bg-transparent hover:bg-white hover:text-gray-800 text-white border-2 border-white px-6 py-3 rounded-full font-medium transition">Отзывы</a>
+                </div>
             </div>
-            <div class="md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
-                     alt="Татьяна Радиковна" 
-                     class="rounded-lg shadow-xl w-full max-w-md mx-auto">
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Программы подготовки</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- OGE Card -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105">
+                    <div class="h-48 bg-blue-600 flex items-center justify-center">
+                        <i class="fas fa-graduation-cap text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Подготовка к ОГЭ</h3>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Полный курс: 8 месяцев</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>2 занятия в неделю по 90 минут</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Разбор всех тем экзамена</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Пробные экзамены</span>
+                            </li>
+                        </ul>
+                        <div class="text-xl font-bold mb-4">2500 руб./занятие</div>
+                        <a href="#contact-form" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 rounded-lg transition">Записаться</a>
+                    </div>
+                </div>
+                
+                <!-- EGE Profile Card -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105">
+                    <div class="h-48 bg-red-600 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ЕГЭ (профильный уровень)</h3>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Полный курс: 10 месяцев</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>2 занятия в неделю по 90 минут</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Углубленная подготовка</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Разбор сложных задач</span>
+                            </li>
+                        </ul>
+                        <div class="text-xl font-bold mb-4">3000 руб./занятие</div>
+                        <a href="#contact-form" class="block w-full bg-red-600 hover:bg-red-700 text-white text-center py-2 rounded-lg transition">Записаться</a>
+                    </div>
+                </div>
+                
+                <!-- EGE Basic Card -->
+                <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105">
+                    <div class="h-48 bg-green-600 flex items-center justify-center">
+                        <i class="fas fa-calculator text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">ЕГЭ (базовый уровень)</h3>
+                        <ul class="mb-4 space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Полный курс: 6 месяцев</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>2 занятия в неделю по 60 минут</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Основные темы экзамена</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Практическая направленность</span>
+                            </li>
+                        </ul>
+                        <div class="text-xl font-bold mb-4">2000 руб./занятие</div>
+                        <a href="#contact-form" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center py-2 rounded-lg transition">Записаться</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-12 md:py-20 bg-white">
+    <section id="about" class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Обо мне</h2>
             <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-8 md:mb-0 md:pr-8">
-                    <img id="teacher-photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
-                         alt="Татьяна Радиковна" 
-                         class="rounded-lg shadow-lg w-full cursor-pointer hover:shadow-xl transition">
-                </div>
-                <div class="md:w-2/3">
-                    <h3 class="text-2xl font-semibold mb-4">Биктина Татьяна Радиковна</h3>
-                    <p class="text-gray-600 mb-4">О вас 1</p>
-                    <ul class="space-y-3 mb-6">
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>О вас 2</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>О вас 3</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>О вас 3</span>
-                        </li>
-                        <li class="flex items-start">
-                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                            <span>О вас 4</span>
-                        </li>
-                    </ul>
-                    <p class="text-gray-600">Моя цель — не просто подготовить к экзаменам, а привить любовь к математике, научить мыслить логически и находить решения сложных задач.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="py-12 md:py-20 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Кабинет для занятий</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="gallery-image">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
-                         alt="Кабинет для занятий" 
-                         class="rounded-lg shadow-md w-full h-64 object-cover"
-                         onclick="openLightbox(this.src)">
-                </div>
-                <div class="gallery-image">
-                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
-                         alt="Кабинет для занятий" 
-                         class="rounded-lg shadow-md w-full h-64 object-cover"
-                         onclick="openLightbox(this.src)">
-                </div>
-                <div class="gallery-image">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" 
-                         alt="Кабинет для занятий" 
-                         class="rounded-lg shadow-md w-full h-64 object-cover"
-                         onclick="openLightbox(this.src)">
-                </div>
-                <div class="gallery-image">
-                    <img src="https://images.unsplash.com/photo-1523240795612-6a040b6cb3fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="Кабинет для занятий" 
-                         class="rounded-lg shadow-md w-full h-64 object-cover"
-                         onclick="openLightbox(this.src)">
-                </div>
-                <div class="gallery-image">
-                    <img src="https://images.unsplash.com/photo-1523050854058-8df9012c9eee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
-                         alt="Кабинет для занятий" 
-                         class="rounded-lg shadow-md w-full h-64 object-cover"
-                         onclick="openLightbox(this.src)">
-                </div>
-                <div class="gallery-image">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1422&q=80" 
-                         alt="Кабинет для занятий" 
-                         class="rounded-lg shadow-md w-full h-64 object-cover"
-                         onclick="openLightbox(this.src)">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Privacy Policy Section -->
-    <section class="py-12 md:py-20 bg-indigo-50">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-6">Политика конфиденциальности</h2>
-            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">Ознакомьтесь с политикой обработки персональных данных</p>
-            <a href="privacy-policy.pdf" target="_blank" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium inline-block transition">
-                Ознакомиться
-            </a>
-        </div>
-    </section>
-
-    <!-- Location Section -->
-    <section id="location" class="py-12 md:py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Где мы находимся</h2>
-            <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <div class="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab6779d9c50595850776d77fc8181657f4bcf4931e35d91614ecb8a3e2db80ec8&amp;source=constructor" width="720" height="390" frameborder="0"></iframe>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="relative group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" 
+                                 alt="Татьяна Радиковна на уроке" 
+                                 class="rounded-lg shadow-md w-full h-64 object-cover group-hover:opacity-90 transition"
+                                 onclick="openLightbox(this.src)">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition rounded-lg"></div>
+                        </div>
+                        <div class="relative group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Татьяна Радиковна объясняет материал" 
+                                 class="rounded-lg shadow-md w-full h-64 object-cover group-hover:opacity-90 transition"
+                                 onclick="openLightbox(this.src)">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition rounded-lg"></div>
+                        </div>
+                        <div class="relative group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Татьяна Радиковна на фестивале" 
+                                 class="rounded-lg shadow-md w-full h-64 object-cover group-hover:opacity-90 transition"
+                                 onclick="openLightbox(this.src)">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition rounded-lg"></div>
+                        </div>
+                        <div class="relative group cursor-pointer">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Татьяна Радиковна с учениками" 
+                                 class="rounded-lg shadow-md w-full h-64 object-cover group-hover:opacity-90 transition"
+                                 onclick="openLightbox(this.src)">
+                            <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition rounded-lg"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div>
-                            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" 
-                                 alt="Вход в здание" 
-                                 class="rounded-lg shadow-md w-full h-48 object-cover"
-                                 onclick="openLightbox(this.src)">
-                        </div>
-                        <div>
-                            <img src="https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" 
-                                 alt="Окрестности" 
-                                 class="rounded-lg shadow-md w-full h-48 object-cover"
-                                 onclick="openLightbox(this.src)">
-                        </div>
-                        <div class="sm:col-span-2">
-                            <div class="bg-indigo-100 p-6 rounded-lg">
-                                <h3 class="text-xl font-semibold mb-3">Как добраться</h3>
+                    <h2 class="text-3xl font-bold mb-6">Обо мне</h2>
+                    <p class="text-lg mb-4">Меня зовут Биктина Татьяна Радиковна. Я репетитор по математике с n-летним опытом подготовки к ОГЭ и ЕГЭ.</p>
+                    <p class="text-lg mb-4">За эти годы я помогла более 200 ученикам успешно сдать экзамены и поступить в выбранные вузы. Мои ученики регулярно получают высокие баллы (80+ на профильном ЕГЭ).</p>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold mb-3">Мой подход:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Индивидуальный план для каждого ученика</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Акцент на понимание, а не заучивание</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Развитие математического мышления</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Комфортная атмосфера без стресса</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                        <p class="italic">"Математика — это не страшно, если объяснять её понятным языком. Моя задача — сделать сложное простым."</p>
+                    </div>
+                    <a href="#contact-form" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition">Записаться на занятие</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Отзывы учеников</h2>
+            
+            <div class="max-w-4xl mx-auto relative">
+                <!-- Slides -->
+                <div class="testimonial-slide active fade-in">
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md">
+                        <div class="flex items-start mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Анна" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Анна</h4>
+                                <div class="flex text-yellow-400 mb-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-sm text-gray-500">ЕГЭ профиль, 92 балла</p>
                             </div>
+                        </div>
+                        <p class="italic">"Татьяна Радиковна — потрясающий преподаватель! Благодаря ей я не только сдала ЕГЭ на высокий балл, но и полюбила математику. Объясняет очень понятно, находит подход к каждому ученику. Занятия проходили в комфортной атмосфере, без лишнего напряжения. Рекомендую всем!"</p>
+                        <div class="mt-4 flex justify-end">
+                            <img src="https://images.unsplash.com/photo-1581093458179-0e6b1b4b8e6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Результат ЕГЭ" 
+                                 class="h-20 rounded cursor-pointer"
+                                 onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide fade-in">
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md">
+                        <div class="flex items-start mb-4">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Дмитрий" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Дмитрий</h4>
+                                <div class="flex text-yellow-400 mb-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-sm text-gray-500">ОГЭ, оценка 5</p>
+                            </div>
+                        </div>
+                        <p class="italic">"Занимался с Татьяной Радиковной весь 9 класс. Сначала математика давалась с трудом, но благодаря её терпению и профессионализму я смог разобраться во всех темах. На экзамене решил все задания без ошибок! Очень благодарен за помощь и поддержку."</p>
+                        <div class="mt-4 flex justify-end">
+                            <img src="https://images.unsplash.com/photo-1581093458179-0e6b1b4b8e6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Результат ОГЭ" 
+                                 class="h-20 rounded cursor-pointer"
+                                 onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-slide fade-in">
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-md">
+                        <div class="flex items-start mb-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Елена" class="w-16 h-16 rounded-full mr-4">
+                            <div>
+                                <h4 class="font-bold">Елена (мама ученицы)</h4>
+                                <div class="flex text-yellow-400 mb-1">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-sm text-gray-500">ЕГЭ базовый, оценка 5</p>
+                            </div>
+                        </div>
+                        <p class="italic">"Моя дочь всегда боялась математики, но после занятий с Татьяной Радиковной страх исчез. Преподаватель умеет объяснять сложные вещи простыми словами, создаёт дружескую атмосферу. Дочь сдала базовый ЕГЭ на отлично и теперь уверена в своих силах. Спасибо за ваш труд!"</p>
+                        <div class="mt-4 flex justify-end">
+                            <img src="https://images.unsplash.com/photo-1581093458179-0e6b1b4b8e6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Результат ЕГЭ" 
+                                 class="h-20 rounded cursor-pointer"
+                                 onclick="openLightbox(this.src)">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Navigation arrows -->
+                <button class="absolute left-0 top-1/2 transform -translate-y-1/2 -ml-4 bg-white rounded-full shadow-md p-2 text-gray-700 hover:text-blue-600" onclick="plusSlides(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="absolute right-0 top-1/2 transform -translate-y-1/2 -mr-4 bg-white rounded-full shadow-md p-2 text-gray-700 hover:text-blue-600" onclick="plusSlides(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <!-- Dots -->
+            <div class="flex justify-center mt-6 space-x-2">
+                <span class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer" onclick="currentSlide(1)"></span>
+                <span class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer" onclick="currentSlide(2)"></span>
+                <span class="dot w-3 h-3 rounded-full bg-gray-300 cursor-pointer" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Materials Section -->
+    <section id="materials" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Бесплатные материалы</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Materials Download -->
+                <div class="bg-gray-50 rounded-xl p-6 shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                            <i class="fas fa-file-download text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Полезные материалы</h3>
+                    </div>
+                    <p class="mb-4">Скачайте бесплатные чек-листы, памятки и подборки задач для подготовки к экзаменам. Доступно после заполнения формы.</p>
+                    <div class="grid grid-cols-2 gap-2 mb-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-file-pdf text-red-500 mr-2"></i>
+                            <span class="text-sm">Чек-лист ОГЭ</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-file-pdf text-red-500 mr-2"></i>
+                            <span class="text-sm">Чек-лист ЕГЭ</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-file-word text-blue-500 mr-2"></i>
+                            <span class="text-sm">Подборка задач</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-file-excel text-green-500 mr-2"></i>
+                            <span class="text-sm">Таблица формул</span>
+                        </div>
+                    </div>
+                    <a href="#contact-form" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition">Получить материалы</a>
+                </div>
+            </div>
+            
+            <!-- Articles -->
+            <div class="max-w-4xl mx-auto mt-12">
+                <h3 class="text-2xl font-bold mb-6 text-center">Полезные Видео</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://images.unsplash.com/photo-1581093458179-0e6b1b4b8e6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="5 ошибок на экзамене" 
+                             class="w-full h-40 object-cover cursor-pointer"
+                             onclick="openLightbox(this.src)">
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2">Самые частые ошибки на экзаменах</h4>
+                            <p class="text-sm text-gray-600 mb-3">Как избежать самых распространённых ошибок на ОГЭ и ЕГЭ по математике.</p>
+                            <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Читать →</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://images.unsplash.com/photo-1581093458179-0e6b1b4b8e6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="фото" 
+                             class="w-full h-40 object-cover cursor-pointer"
+                             onclick="openLightbox(this.src)">
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2">Как распределить время на ЕГЭ</h4>
+                            <p class="text-sm text-gray-600 mb-3">Оптимальная стратегия распределения времени на экзамене.</p>
+                            <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Читать →</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition">
+                        <img src="https://images.unsplash.com/photo-1581093458179-0e6b1b4b8e6d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Фото" 
+                             class="w-full h-40 object-cover cursor-pointer"
+                             onclick="openLightbox(this.src)">
+                        <div class="p-4">
+                            <h4 class="font-bold mb-2">Как перестать бояться математики</h4>
+                            <p class="text-sm text-gray-600 mb-3">Практические советы по преодолению страха перед математикой.</p>
+                            <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Читать →</a>
                         </div>
                     </div>
                 </div>
@@ -187,25 +432,144 @@
         </div>
     </section>
 
+    <!-- Contacts Section -->
+    <section id="contacts" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Контакты</h2>
+            
+            <div class="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl shadow-md p-6 mb-6">
+                        <h3 class="text-xl font-bold mb-4">Свяжитесь со мной</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Телефон</p>
+                                    <a href="tel:+79123456789" class="font-medium hover:text-blue-600">+7 (912) 345-67-89</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-green-100 text-green-600 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">WhatsApp</p>
+                                    <a href="https://wa.me/79123456789" target="_blank" class="font-medium hover:text-green-600">Написать в WhatsApp</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-blue-400 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                    <i class="fab fa-telegram"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">Telegram</p>
+                                    <a href="https://t.me/username" target="_blank" class="font-medium hover:text-blue-400">Написать в Telegram</a>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-blue-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                                    <i class="fab fa-vk"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm text-gray-500">ВКонтакте</p>
+                                    <a href="https://vk.com" target="_blank" class="font-medium hover:text-blue-600">Мой профиль ВКонтакте</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-md p-6">
+                        <h3 class="text-xl font-bold mb-4">Где проходят занятия</h3>
+                        <p class="mb-4">Занятия проходят онлайн (Zoom) или очно по адресу: г. Магнитогорск, просп. Ленина, д. 127</p>
+                        <div class="rounded-lg overflow-hidden">
+                            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab6779d9c50595850776d77fc8181657f4bcf4931e35d91614ecb8a3e2db80ec8&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+    <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-xl font-bold mb-4" id="contact-form">Записаться на занятие</h3>
+        <form id="contactForm" class="space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-medium mb-1">Ваше имя *</label>
+                <input type="text" id="name" name="name" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div>
+                <label for="phone" class="block text-sm font-medium mb-1">Телефон *</label>
+                <input type="tel" id="phone" name="phone" required
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                <input type="email" id="email" name="email"
+                       class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            </div>
+            <div>
+                <label for="program" class="block text-sm font-medium mb-1">Программа *</label>
+                <select id="program" name="program" required
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                    <option value="" disabled selected>Выберите программу</option>
+                    <option value="oge">Подготовка к ОГЭ</option>
+                    <option value="ege_profile">ЕГЭ (профильный уровень)</option>
+                    <option value="ege_basic">ЕГЭ (базовый уровень)</option>
+                    <option value="consultation">Консультация</option>
+                </select>
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium mb-1">Ваши вопросы</label>
+                <textarea id="message" name="message" rows="3"
+                          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+            </div>
+            <div class="flex items-center">
+                <input type="checkbox" id="consent" name="consent" required
+                       class="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                <label for="consent" class="ml-2 text-sm">Я согласен(а) на обработку персональных данных</label>
+            </div>
+            <button type="submit"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg font-medium transition">
+                Отправить заявку
+            </button>
+        </form>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Privacy Policy -->
+    <section class="py-8 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm text-gray-600 mb-2">Ознакомьтесь с политикой обработки персональных данных</p>
+            <a href="#" class="text-blue-600 text-sm font-medium hover:underline">Политика конфиденциальности</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-4 md:mb-0">
-                    <p>&copy; <span id="current-year"></span> Биктина Татьяна Радиковна</p>
+                    <p class="text-sm">© 2023 Биктина Татьяна Радиковна</p>
+                    <p class="text-sm">Репетитор по математике</p>
                 </div>
-                <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-                    <a href="tel:+71234567890" class="hover:text-indigo-300 transition">
-                        <i class="fas fa-phone mr-2"></i> +7 (909) 095-48-83
+                <div class="flex space-x-4 mb-4 md:mb-0">
+                    <a href="https://vk.com" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-vk text-xl"></i>
                     </a>
-                    <a href="https://vk.com/tatradmatem" target="_blank" class="hover:text-indigo-300 transition">
-                        <i class="fab fa-vk mr-2"></i> ВКонтакте
+                    <a href="https://wa.me/79123456789" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-whatsapp text-xl"></i>
                     </a>
-                    <a href="privacy-policy.pdf" target="_blank" class="hover:text-indigo-300 transition">
-                        Политика конфиденциальности
+                    <a href="https://t.me/username" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-telegram text-xl"></i>
                     </a>
+                </div>
+                <div class="text-sm">
+                    <a href="tel:+79123456789" class="hover:text-blue-400 transition">+7 (912) 345-67-89</a>
                 </div>
             </div>
         </div>
@@ -213,25 +577,25 @@
 
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" class="lightbox-content" src="" alt="">
-    </div>
-
-    <!-- Modal for form submission -->
-    <div id="success-modal" class="modal">
-        <div class="modal-content">
-            <div class="text-center">
-                <i class="fas fa-check-circle text-green-500 text-5xl mb-4"></i>
-                <h3 class="text-2xl font-bold mb-2">Заявка отправлена!</h3>
-                <p class="text-gray-600 mb-4">Я свяжусь с вами в ближайшее время для уточнения деталей.</p>
-                <button onclick="closeModal()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition">
-                    Закрыть
-                </button>
-            </div>
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" class="lightbox-img" src="">
         </div>
     </div>
 
-
+    <!-- Success Modal -->
+    <div id="success-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+                    <i class="fas fa-check text-green-600 text-xl"></i>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900 mb-2">Заявка отправлена!</h3>
+                <p class="text-sm text-gray-500 mb-4">Я свяжусь с вами в ближайшее время для уточнения деталей.</p>
+                <button onclick="closeSuccessModal()" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium transition">Закрыть</button>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
